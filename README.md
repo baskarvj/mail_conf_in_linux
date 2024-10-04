@@ -13,7 +13,7 @@ subject="Disk Usage Alert at admin instance"
 disk_usage=$(df / | grep / |awk '{print $5}'|sed 's/%//')
 
 # Check if disk usage exceeds 85%
-if [ "$disk_usage" -lt 85 ]; then
+if [ "$disk_usage" -gt 85 ]; then
   echo "Your instance has reached ${disk_usage}% disk usage!" | mail -s "$subject" "$to_mail"
   echo "Disk usage report sent to $to_mail"
 fi
