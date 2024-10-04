@@ -3,12 +3,13 @@
 Steps :
 
 1. Install Mail Packages
+ ~~~  
    yum install postfix mailx cyrus-sasl cyrus-sasl-plain -y
-
-2. Create GMail Account
+~~~
+3. Create GMail Account
    a) Generate App Password
 
-3. Edit sasl_password file and add gmail account details
+4. Edit sasl_password file and add gmail account details
 
    vi /etc/postfix/sasl_passwd
 
@@ -36,6 +37,8 @@ Steps :
    smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
 
 9. execute below commad to comment duplicate line
+
+    
    sudo sed -i '/smtp_tls_CAfile = \/etc\/pki\/tls\/certs\/ca-bundle.crt/s/^/#/' /etc/postfix/main.cf
    sudo sed -i '/smtp_tls_security_level = may/s/^/#/' /etc/postfix/main.cf
 
