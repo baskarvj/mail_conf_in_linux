@@ -37,6 +37,8 @@ Steps :
 
 9. execute below commad to comment duplicate line
    sudo sed -i '/smtp_tls_CAfile = \/etc\/pki\/tls\/certs\/ca-bundle.crt/s/^/#/' /etc/postfix/main.cf
+   sudo sed -i '/smtp_tls_security_level = may/s/^/#/' /etc/postfix/main.cf
+
  
-10. Test EMAIL   
+11. Test EMAIL   
    echo "Test Email" | mail -s "Send Email from Linux" sendmailfromlinux@gmail.com
