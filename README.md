@@ -34,6 +34,9 @@ Steps :
    
    # Location of sasl_passwd   
    smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
-   
-9. Test EMAIL   
+
+9. execute below commad to comment duplicate line
+   sudo sed -i '/smtp_tls_CAfile = \/etc\/pki\/tls\/certs\/ca-bundle.crt/s/^/#/' /etc/postfix/main.cf
+ 
+10. Test EMAIL   
    echo "Test Email" | mail -s "Send Email from Linux" sendmailfromlinux@gmail.com
